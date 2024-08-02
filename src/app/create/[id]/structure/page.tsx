@@ -1,5 +1,6 @@
-import SelectCategory from "@/app/components/SelectCategort";
-import SelectCategort from "@/app/components/SelectCategort";
+import { createCategoryPage } from "@/app/actions/actions";
+import { CreateBottomBar } from "@/app/components/CreateBottomBar";
+import SelectCategory from "@/app/components/SelectCategory";
 import React from "react";
 
 export default function StructureRoute({ params }: { params: { id: string } }) {
@@ -11,13 +12,11 @@ export default function StructureRoute({ params }: { params: { id: string } }) {
         </h2>
       </div>
 
-      <form
-      // action={createCategoryPage}
-      >
+      <form action={createCategoryPage}>
         <input type="hidden" name="homeId" value={params.id} />
         <SelectCategory />
 
-        {/* <CreateBottomBar /> */}
+        <CreateBottomBar />
       </form>
     </>
   );
