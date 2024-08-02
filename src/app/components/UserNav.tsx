@@ -13,7 +13,7 @@ import {
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { MenuIcon } from "lucide-react";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
 
 const UserNav = async () => {
   const { getUser } = getKindeServerSession();
