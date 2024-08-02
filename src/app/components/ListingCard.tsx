@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getCountries } from "../lib/getCountries";
+import { AddToFavoriteButton, DeleteFromFavoriteButton } from "./SubmitButton";
+import { addToFavorite, DeleteFromFavorite } from "../actions/actions";
 // import { AddToFavoriteButton, DeleteFromFavoriteButton } from "./SubmitButtons";
 // import { DeleteFromFavorite, addToFavorite } from "../actions";
 
@@ -22,9 +24,9 @@ export function ListingCard({
   location,
   price,
   userId,
-  //   favoriteId,
+  favoriteId,
   homeId,
-  //   isInFavoriteList,
+  isInFavoriteList,
   pathName,
 }: iAppProps) {
   const { getCountryByValue } = getCountries();
@@ -40,7 +42,7 @@ export function ListingCard({
           className="rounded-xl h-full object-cover"
         />
 
-        {/* {userId && (
+        {userId && (
           <div className="z-10 absolute top-2 right-2">
             {isInFavoriteList ? (
               <form action={DeleteFromFavorite}>
@@ -58,7 +60,7 @@ export function ListingCard({
               </form>
             )}
           </div>
-        )} */}
+        )}
       </div>
 
       <Link href={`/home/${homeId}`} className="mt-2">
